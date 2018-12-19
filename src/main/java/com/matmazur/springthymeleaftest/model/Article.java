@@ -1,15 +1,12 @@
 package com.matmazur.springthymeleaftest.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Article {
 
     private String title;
     private String content;
-    private List<String> tags;
+    private String tags;
 
-    public Article(String title, String content, List<String> tags) {
+    public Article(String title, String content, String tags) {
         this.title = title;
         this.content = content;
         this.tags = tags;
@@ -34,11 +31,11 @@ public class Article {
         this.content = content;
     }
 
-    public List<String> getTags() {
+    public String getTags() {
         return tags;
     }
 
-    public void setTags(List<String> tags) {
+    public void setTags(String tags) {
         this.tags = tags;
     }
 }

@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/html"><head>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
 <body>
+
+<h1 th:text="${formArticle.title}"></h1>
+<h3 th:text="${formArticle.content}"></h3>
+<p th:text="${formArticle.tags}"></p>
 
 </body>
 </html>
