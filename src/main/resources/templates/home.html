@@ -11,7 +11,7 @@
 <form th:action="@{/add}" th:method="post">
     <p><input type="text" th:field="${formArticle.title}" placeholder="title.."></p>
     <p><textarea th:field="${formArticle.content}" placeholder="content..."></textarea></p>
-    <p><input type="text" th:field="${formArticle.tags}" placeholder="tags...."></p>
+    <p><input type="text" name="tags" placeholder="tags...."></p>
     <p><input type="submit" value="post"></p>
 </form>
 </body>

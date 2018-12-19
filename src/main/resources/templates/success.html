@@ -9,7 +9,10 @@
 
 <h1 th:text="${formArticle.title}"></h1>
 <h3 th:text="${formArticle.content}"></h3>
-<p th:text="${formArticle.tags}"></p>
+
+<ul th:each="tag : ${formArticle.tags}">
+    <li th:text="${tag}"></li>
+</ul>
 
 </body>
 </html>
