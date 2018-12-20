@@ -7,14 +7,14 @@ public class Article {
     private String title;
     private String content;
     private List<String> tags;
+    private String user;
 
-    public Article(String title, String content, List<String> tags) {
-        this.title = title;
-        this.content = content;
-        this.tags = tags;
+    public String getUser() {
+        return user;
     }
 
-    public Article() {
+    public void setUser(String user) {
+        this.user = user;
     }
 
     public String getTitle() {

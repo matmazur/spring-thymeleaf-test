@@ -5,14 +5,14 @@
         <meta charset="UTF-8">
         <title>Title</title>
     </head>
+    <meta http-equiv="refresh" content="2; url=/" />
 <body>
-
+<h1 th:text="'Succsess!'"></h1>
 <h1 th:text="${formArticle.title}"></h1>
 <h3 th:text="${formArticle.content}"></h3>
 
-<ul th:each="tag : ${formArticle.tags}">
-    <li th:text="${tag}"></li>
+<ul  th:each="tag : ${formArticle.tags}">
+    <li  th:text="${tag}"></li>
 </ul>
-
 </body>
 </html>
