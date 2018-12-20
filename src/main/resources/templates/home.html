@@ -8,18 +8,17 @@
 
 <h1 th:text="${hello}">Wololo!</h1>
 
-<form th:action="@{/add}" th:method="post">
-    <p><input type="text" th:field="${formArticle.title}" placeholder="title.."></p>
-    <p><textarea th:field="${formArticle.content}" placeholder="content..."></textarea></p>
+<form th:action="@{/add}" th:object="${article}" th:method="post">
+    <p><input type="text" th:field="*{title}" placeholder="title.."></p>
+    <p><textarea th:field="*{content}" placeholder="content..."></textarea></p>
     <p><input type="text" name="tags" placeholder="tags...."></p>
-    <p><input type="text" name="user" placeholder="your name"></p>
+    <p><input type="text" th:field="*{user}" placeholder="your name"></p>
 
     <p><input type="submit" value="post"></p>
 </form>
 <hr>
 <div th:unless="${allArticles} == null" th:each="article:${allArticles}">
-    <p th:text="${#dates.createNow()}"></p>
-    <p th:text="${article.now} + ' by ' + ${article.user}"></p>
+    <p th:text="${#dates.createNow()}+ ' by ' + ${article.user}"></p>
     <h2 th:text="${article.title}"></h2>
     <h3 th:text="${article.content} "></h3>
     <ul th:each="tag : ${article.tags}">

@@ -25,28 +25,28 @@ public class HomeController {
     public String home(ModelMap modelMap) {
 
         modelMap.put("hello", "Hello Thyme!");
-        modelMap.put("formArticle", new Article());
+        modelMap.put("article", new Article());
         modelMap.put("allArticles", allArticles);
 
         return "home";
     }
 
     @PostMapping("/add")
-    public String add(@ModelAttribute Article formArticle, ModelMap modelMap, @RequestParam String tags) {
+    public String add(@ModelAttribute Article article, ModelMap modelMap, @RequestParam String tags) {
 
         List<String> listOfTags = returnListOfTagsIfPossible(tags, new ArrayList<>());
-        formArticle.setTags(listOfTags);
+        article.setTags(listOfTags);
 
 
-        if (formArticle.getTitle().isEmpty() || formArticle.getContent().isEmpty()) {
+        if (article.getTitle().isEmpty() || article.getContent().isEmpty()) {
             return "fail";
         }
 
-        if (formArticle.getUser().isEmpty()) {
-            formArticle.setUser("Anonymous");
+        if (article.getUser().isEmpty()) {
+            article.setUser("Anonymous");
         }
-        allArticles.add(formArticle);
-        modelMap.put("formArticle", formArticle);
+        allArticles.add(article);
+        modelMap.put("formArticle", article);
 
         return "success";
     }
