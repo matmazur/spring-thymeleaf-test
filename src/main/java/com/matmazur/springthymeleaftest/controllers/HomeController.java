@@ -1,9 +1,11 @@
 package com.matmazur.springthymeleaftest.controllers;
 
 import com.matmazur.springthymeleaftest.model.Article;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -20,7 +22,7 @@ public class HomeController {
     private List<Article> allArticles = new ArrayList<>();
 
     @GetMapping("/")
-    public String home(ModelMap modelMap, @RequestHeader("Accept-Language") String encoding ) {
+    public String home(ModelMap modelMap, @RequestHeader("Accept-Language") String encoding) {
 
         modelMap.put("hello", "Hello Thyme!");
         modelMap.put("article", new Article());
