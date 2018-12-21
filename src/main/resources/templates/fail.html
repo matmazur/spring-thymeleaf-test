@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<h1>This is an error page.</h1>
+<h1 th:text="#{errorpage.redirectMessage}"></h1>
 <h2 th:text="#{failure.redirectMessage}"></h2>
 
 <a th:text="#{goback.redirectMessage}" href="/"></a>

@@ -9,10 +9,10 @@
 <h1 th:text="#{hello.welcomeMessage}">Wololo!</h1>
 
 <form th:action="@{/add}" th:object="${article}" th:method="post">
-    <p><input type="text" th:field="*{title}" placeholder="title.."></p>
-    <p><textarea th:field="*{content}" placeholder="content..."></textarea></p>
-    <p><input type="text" name="tags" placeholder="tags...."></p>
-    <p><input type="text" th:field="*{user}" placeholder="your name"></p>
+    <p><input type="text" th:field="*{title}" th:placeholder="#{title.formArticle}"></p>
+    <p><textarea th:field="*{content}" th:placeholder="#{content.formArticle}"></textarea></p>
+    <p><input type="text" name="tags" th:placeholder="#{tags.formArticle}"></p>
+    <p><input type="text" th:field="*{user}" th:placeholder="#{user.formArticle}"></p>
 
     <p><input type="submit" value="post"></p>
 </form>
