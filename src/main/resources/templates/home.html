@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1 th:text="${hello}">Wololo!</h1>
+<h1 th:text="#{hello.welcomeMessage}">Wololo!</h1>
 
 <form th:action="@{/add}" th:object="${article}" th:method="post">
     <p><input type="text" th:field="*{title}" placeholder="title.."></p>
